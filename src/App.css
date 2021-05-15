@@ -1,18 +1,13 @@
-.TrafficLightTop {
-  background-color: black;
-  width: 10px; 
-  height: 70px;
-  margin-left: 80px;
- 
-}
+
 
 .container {
   background-color: black;
   width: 56px;
   height: 178px;
   margin-left: 50px;
-  padding: 7px;
+  padding: 10px;
   border-radius: 10px;
+  margin: 50px auto;
 
 }
 
