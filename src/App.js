@@ -1,25 +1,46 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React from 'react';
 
-function App() {
+export default class TrafficLight extends React.Component {
+  
+constructor(){
+  super()
+  this.state = {
+    clickedLight: null
+  };
+};
+
+render() {
+  let redExtraClass = '';
+  if(this.state.clickedLight === "red") redExtraClass = "selected"
+  
+  let yellowExtraClass = '';
+  if(this.state.clickedLight === "yellow") 
+    yellowExtraClass = "selected"
+  
+  let greenExtraClass = '';
+  if(this.state.clickedLight === "green") 
+    greenExtraClass = "selected"
+  
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div className="TrafficLightTop">
+      <div className="container">
+        <div className={"redLight " + redExtraClass} onClick={()=> this.setState({clickedLight: "red"})}>
 
-export default App;
+        </div>
+        <div className={"yellowLight " + yellowExtraClass} onClick={()=> this.setState({clickedLight: "yellow"})}>
+
+        </div>
+        <div className={"greenLight " + greenExtraClass} onClick={()=> this.setState({clickedLight: "green"})}>
+
+        </div>
+      </div>
+   
+    </div>
+  )
+}
+}
